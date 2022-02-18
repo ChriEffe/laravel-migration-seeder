@@ -10,7 +10,7 @@ class TrainController extends Controller
 {
     public function index()
     {
-        $trains = Train::all();
+        $trains = Train::where('departure_date', '>=', '18/02/2022')->get();
         $data = ['trains' => $trains];
         return view('home', $data);
     }
