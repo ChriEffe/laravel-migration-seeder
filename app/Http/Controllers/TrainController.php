@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Train;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class TrainController extends Controller
 {
     public function index()
     {
-        $trains = Train::where('departure_date', '>=', '18/02/2022')->get();
+        $trains = Train::where('departure_date', '>=', Carbon::today()->toDateString())->get();
         $data = ['trains' => $trains];
         return view('home', $data);
     }
