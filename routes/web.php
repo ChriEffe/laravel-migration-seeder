@@ -19,4 +19,4 @@ use App\Http\Controllers\TrainController;
 // });
 
 Route::get('/', 'TrainController@index')->name('home');
-Route::get('/{train}', 'TrainController@show')->name('show');
+Route::get('/trains{train}', 'TrainController@show')->name('show');
